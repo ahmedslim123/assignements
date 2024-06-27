@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="LunchCheckerApp">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+<body>
+   <div class="container" ng-controller="LunchCheckerController">
+     <h1>Lunch Checker</h1>
+
+     <div class="form-group">
+       <!-- Use ng-model to bind the input to AngularJS scope -->
+       <input id="lunch-menu" type="text"
+       placeholder="list comma separated dishes you usually have for lunch"
+       class="form-control" ng-model="lunchItems">
+     </div>
+     <div class="form-group">
+       <!-- Use ng-click to bind the button click to the AngularJS function -->
+       <button class="btn btn-default" ng-click="checkLunch()">Check If Too Much</button>
+     </div>
+     <div class="form-group message">
+       <!-- Display the message based on the result -->
+       {{ message }}
+     </div>
+   </div>
+
+   <!-- Include AngularJS library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+   <!-- Include the app.js file -->
+   <script src="app.js"></script>
+</body>
+</html>
